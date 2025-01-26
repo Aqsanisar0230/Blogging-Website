@@ -1,0 +1,17 @@
+{
+    "name": "blogging-website",
+    "version": "1.0.0",
+    "description": "A simple blogging website",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js",
+      "build": "npx parcel build src/index.html"
+    },
+    "dependencies": {},
+    "devDependencies": {
+      "parcel": "^2.0.0"
+    },
+    "author": "Your Name",
+    "license": "ISC"
+  }
+  
