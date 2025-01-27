@@ -9,8 +9,8 @@
   "keywords": [],
   "author": "Your Name",
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
-    "parcel": "^2.0.0"
+    "parcel": "^2.0.0",
+    "stylelint": "^16.14.0"
   }
 }
