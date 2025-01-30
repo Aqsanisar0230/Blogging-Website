@@ -29,8 +29,9 @@ jobs:
         run: npx parcel build index.html blog.html contact.html --public-url . --no-cache
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-artifact@v4  #  Correct version
         with:
+          name: build-artifact
           path: dist
 
   deploy:
@@ -39,5 +40,14 @@ jobs:
     environment: 
       name: github-pages
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Download artifact
+        uses: actions/download-artifact@v4  #  Correct version
+        with:
+          name: build-artifact
+          path: dist
+
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v2  #  Correct version
