@@ -26,10 +26,10 @@ jobs:
         run: npm install
 
       - name: Build website
-        run: npx parcel build index.html --public-url . --no-cache
+        run: npx parcel build index.html blog.html contact.html --public-url . --no-cache
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2.1.2  # ✅ UPDATED TO THE LATEST VERSION
+        uses: actions/upload-pages-artifact@v2.1.2 
         with:
           path: dist
 
