@@ -3,13 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>Contact Page</title>
     <link rel="stylesheet" href="../styles/contact.css">
 </head>
 <body>
+
+    <div class="navbar">
+        <a href="home.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
     <h1>Contact Us</h1>
-    <p>Feel free to reach out with any questions or feedback!</p>
-    <a href="home.html">Go to Home</a>
-    <a href="blog.html">Go to Blog Page</a>
+
+    <div class="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email">
+
+        <label for="message">Message:</label>
+        <textarea id="message" rows="5" placeholder="Write your message here..."></textarea>
+
+        <button type="submit">Send</button>
+    </div>
+
 </body>
 </html>
