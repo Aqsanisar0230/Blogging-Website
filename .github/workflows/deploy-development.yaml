@@ -1,3 +1,4 @@
+---
 name: Deploy to Development
 
 on:
@@ -26,7 +27,9 @@ jobs:
         run: npm install
 
       - name: Build website
-        run: npx parcel build index.html blog.html contact.html --public-url . --no-cache
+        run: >
+          npx parcel build index.html blog.html contact.html 
+          --public-url . --no-cache
 
       - name: Debug: List build files
         run: ls -l dist || echo "dist folder is missing!"
@@ -42,7 +45,6 @@ jobs:
     needs: build
     environment: 
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -55,14 +57,6 @@ jobs:
 
       - name: Debug: List downloaded files
         run: ls -l dist || echo "dist folder is missing after download!"
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v3
-
-      - name: Upload artifact for deployment
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: dist
 
       - name: Deploy to GitHub Pages
         id: deployment
