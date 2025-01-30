@@ -31,4 +31,10 @@ jobs:
         run: npm install
 
       - name: Build website
-        run: npx parcel build index.html --public-url . --no-cache  # Same build command as the deploy workflow
+        run: npx parcel build index.html --public-url . --no-cache  # Same build command as deploy workflow
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4  
+        with:
+          name: build-artifact
+          path: dist
